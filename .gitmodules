@@ -1,0 +1,3 @@
+[submodule "KagamiCore"]
+	path = serial-debugger/KagamiCore
+	url = git@github.com:JSkrat/kagami-house-avr-core.git
