@@ -45,17 +45,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     // setup packet constructor
     ui->tab_packet_constructor->setLayout(ui->vlPacketConstructor);
-    fDataID q1;
-    q1.data.type = ediMethod;
-    q1.data.dataId = 0x40;
-    std::cout << "functionName size " << functionName.size() << std::endl;
     for (auto i = functionName.begin(); i != functionName.end(); ++i) {
+        uint8_t serialized = i.key().data.dataId | (i.key().data.type << 7);
         std::cout << "add function " << i.value().toStdString().c_str() << std::endl;
         ui->pcFunctionList->addItem(
                     QString("0x%1 %2")
-                        .arg(i.key().byte, 2, 16, QChar('0'))
+                        .arg(serialized, 2, 16, QChar('0'))
                         .arg(i.value()),
-                    i.key().byte
+                    serialized
         );
     }
 }
