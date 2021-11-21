@@ -1,4 +1,3 @@
-#pragma pack(1)
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "serialthread.h"
@@ -8,6 +7,7 @@
 #include <QMessageBox>
 #include <QCheckBox>
 #include <QHash>
+#include <iostream>
 
 
 const QHash<eModemCommand, QString> responseEtcText = {
@@ -43,9 +43,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     // setup packet constructor
     ui->tab_packet_constructor->setLayout(ui->vlPacketConstructor);
+    std::cout << "functionName size " << functionName.size() << std::endl;
     for (auto i = functionName.begin(); i != functionName.end(); ++i) {
+        std::cout << "add function " << i.value().toStdString().c_str() << std::endl;
         ui->pcFunctionList->addItem(
-                    QString("0x%1 %2").arg(i.key().byte, 2, 16, QChar('0')).arg(i.value()),
+                    QString("0x%1 %2")
+                        .arg(i.key().byte, 2, 16, QChar('0'))
+                        .arg(i.value()),
                     i.key().byte
         );
     }

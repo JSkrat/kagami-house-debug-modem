@@ -1,4 +1,3 @@
-#pragma pack(1)
 #include "serialthread.h"
 #include <QSerialPort>
 #include <QThread>

@@ -1,4 +1,3 @@
-#pragma pack(1)
 #include "packet.h"
 #include "KagamiCore/RF protocol.h"
 #include "KagamiCore/RF functions.h"

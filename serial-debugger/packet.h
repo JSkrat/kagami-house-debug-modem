@@ -1,7 +1,6 @@
 #ifndef PACKET_H
 #define PACKET_H
 
-#pragma pack(1)
 #include <QString>
 #include <QHash>
 #include "KagamiCore/RF protocol.h"
