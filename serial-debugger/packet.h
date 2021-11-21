@@ -3,7 +3,9 @@
 
 #include <QString>
 #include <QHash>
-#include "KagamiCore/RF protocol.h"
+extern "C" {
+    #include "KagamiCore/RF protocol.h"
+}
 
 /*enum eRFFunction {
     rfNumberUnits = 0x00,

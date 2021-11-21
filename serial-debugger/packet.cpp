@@ -1,6 +1,8 @@
 #include "packet.h"
-#include "KagamiCore/RF protocol.h"
-#include "KagamiCore/RF functions.h"
+extern "C" {
+    #include "KagamiCore/RF protocol.h"
+    #include "KagamiCore/RF functions.h"
+}
 #include <QMap>
 #include <QHash>
 #include <QString>
