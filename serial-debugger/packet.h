@@ -22,7 +22,7 @@ extern "C" {
     rfGetBuildVersion = 0x20,
 };*/
 
-extern const QHash<fDataID, QString> functionName;
+extern const QMap<fDataID, QString> functionName;
 
 
 class Packet

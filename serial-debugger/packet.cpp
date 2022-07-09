@@ -15,7 +15,14 @@ bool operator==(const fDataID &p1, const fDataID &p2) {
     return (p1.byte == p2.byte);
 }
 
-const QHash<fDataID, QString> functionName = {
+
+bool qMapLessThanKey(const fDataID &key1, const fDataID &key2)
+{
+    return (key1.data.dataId | (key1.data.type << 7)) <
+            (key2.data.dataId | (key2.data.type << 7));
+}
+
+const QMap<fDataID, QString> functionName = {
     {{.data = {.type = ediNode, .dataId = eFProperties}}, "info"},
     {{.data = {.type = ediNode, .dataId = eFTextDescription}}, "text description"},
 
